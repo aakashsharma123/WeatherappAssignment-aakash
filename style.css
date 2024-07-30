@@ -1,0 +1,73 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#container {
+    width: 95%;
+    height: 95%;
+}
+
+#first-child-container {
+    width: 80%;
+    height: 30%;
+}
+
+#forcast-container {
+    width: 30%;
+    height: auto;
+}
+
+@media only screen and (min-width: 376px) and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        /* Adjusted font size for iPad Mini */
+    }
+
+    .flex {
+        flex-direction: column;
+        /* Stack items vertically */
+    }
+
+    #first-child-container,
+    #forcast-container {
+        margin-bottom: 15px;
+        padding: 10px;
+        /* Add padding for better spacing */
+    }
+    #forcast-container{
+        margin-top: auto;
+    }
+    
+
+    .text-5xl {
+        font-size: 1.75rem;
+        /* Adjust font size for larger screens */
+    }
+
+    .text-2xl {
+        font-size: 1.125rem;
+        /* Adjust font size for larger screens */
+    }
+
+    img {
+        width: 60px;
+        /* Larger image size for iPad Mini */
+    }
+
+    .border-8 {
+        border-width: 4px;
+        /* Slightly thicker borders */
+    }
+
+    .mt-10 {
+        margin-top: 1.5rem;
+        /* Adjust margin-top */
+    }
+}
+
+

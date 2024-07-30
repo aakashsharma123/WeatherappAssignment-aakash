@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-red-300 flex justify-center items-center">
+    <!-- the main container  -->
+    <div class="border-8 border-r-2 bg-orange-300 shadow-2xl rounded-lg " id="container">
+        <!-- the header section  -->
+        <header class="flex justify-center">
+            <h1 class="text-5xl font-sans">Weather DashBoard</h1>
+        </header>
+        <!-- the city inputs -->
+        <div class="flex justify-center items-center mt-10 space-x-4">
+            <label for="city-name" class="whitespace-nowrap font-extrabold text-3xl">Enter City Name</label>
+            <input type="text" placeholder="city name" id="city-name" class="border p-2 rounded outline-none">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-sky-500" id="search-button">Search</button>
+            <span>or</span>
+            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded" id="userlocation">Use Current
+                Location</button>
+            <div id="dropdown-container">
+            </div>
+        </div>
+        <!-- the current weather details  -->
+        <div class=" ml-auto mr-auto mt-10 border-8 border-r-2 bg-slate-400 shadow-2xl rounded-lg  flex justify-between"
+            id="first-child-container">
+            <div class="flex flex-col justify-between ">
+                <p class="text-5xl"><span class="citynametex"></span> <span>:</span> <span>()</span>
+                </p>
+                <p class="text-2xl"><span>Temperature</span> <span>:</span></p>
+                <p class="text-2xl"><span>Wind</span> <span>:</span> <span></span></p>
+                <p class="text-2xl"><span>Humidity</span> <span>:</span> <span></span></p>
+            </div>
+            <div class="flex justify-center flex-col-reverse mr-20" id="weather-change">
+                <img src="Images/weather.png" width="150px" alt="weather" class="mb-2">
+                <span class="text-center text-5xl">weather</span>
+            </div>
+        </div>
+        <!-- the 5 forecast weather  -->
+        <div id="forcastcontainer" class="mt-5 flex justify-around ">
+            <!-- the forecast weather 1 -->
+            <div id="forcast-child-container-1">
+                <div
+                    class="mt-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600 duration-300 ... border-8 rounded-lg bg-slate-400 hover:bg-slate-500">
+                    <div>
+                        <img src="/Images/cloud.png" width="50px" alt="">
+                    </div>
+                    <p class="text-2xl"><span>Temperature</span> <span>:</span></p>
+                    <p class="text-2xl"><span>Wind</span> <span>:</span> <span></span></p>
+                    <p class="text-2xl"><span>Humidity</span> <span>:</span> <span></span></p>
+                </div>
+
+            </div>
+            <!-- the secound forecast weather  -->
+            <div id="forcast-child-container-2">
+
+                <div
+                    class="mt-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600 duration-300 ... border-8 rounded-lg bg-slate-400 hover:bg-slate-500">
+
+                    <div>
+                        <img src="/Images/cloud.png" width="50px" alt="">
+                    </div>
+                    <p class="text-2xl"><span>Temperature</span> <span>:</span></p>
+                    <p class="text-2xl"><span>Wind</span> <span>:</span> <span></span></p>
+                    <p class="text-2xl"><span>Humidity</span> <span>:</span> <span></span></p>
+                </div>
+            </div>
+            <!-- the third forecast weather  -->
+            <div id="forcast-child-container-3">
+
+                <div
+                    class="mt-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600 duration-300 ... border-8 rounded-lg bg-slate-400 hover:bg-slate-500">
+
+                    <div>
+                        <img src="/Images/cloud.png" width="50px" alt="">
+                    </div>
+                    <p class="text-2xl"><span>Temperature</span> <span>:</span></p>
+                    <p class="text-2xl"><span>Wind</span> <span>:</span> <span></span></p>
+                    <p class="text-2xl"><span>Humidity</span> <span>:</span> <span></span></p>
+                </div>
+
+            </div>
+            <!-- the fourth forecast weather -->
+            <div id="forcast-child-container-4">
+
+                <div
+                    class="mt-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600 duration-300 ... border-8 rounded-lg bg-slate-400 hover:bg-slate-500">
+
+                    <div>
+                        <img src="/Images/cloud.png" width="50px" alt="">
+                    </div>
+                    <p class="text-2xl"><span>Temperature</span> <span>:</span></p>
+                    <p class="text-2xl"><span>Wind</span> <span>:</span> <span></span></p>
+                    <p class="text-2xl"><span>Humidity</span> <span>:</span> <span></span></p>
+                </div>
+            </div>
+
+            <!-- the fivth forcast weather -->
+            <div id="forcast-child-container-5">
+
+                <div
+                    class="mt-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-600 duration-300 ... border-8 rounded-lg bg-slate-400 hover:bg-slate-500">
+
+                    <div>
+                        <img src="/Images/cloud.png" width="50px" alt="">
+                    </div>
+                    <p class="text-2xl"><span>Temperature</span> <span>:</span></p>
+                    <p class="text-2xl"><span>Wind</span> <span>:</span><span></span></p>
+                    <p class="text-2xl"><span>Humidity</span> <span>:</span> <span></span></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
