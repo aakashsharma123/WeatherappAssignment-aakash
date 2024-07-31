@@ -104,7 +104,8 @@ async function displaydataofdropdown() {
 
     if (cities.length === 0) {
       let defaultMessage = document.createElement("option");
-      defaultMessage.textContent = "Not available";
+      defaultMessage.textContent = "select a city ?";
+      defaultMessage.value = "";
       dropdown.appendChild(defaultMessage);
     } else {
       cities.forEach((city) => {
