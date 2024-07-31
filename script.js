@@ -17,12 +17,11 @@ async function fetchApi(url) {
     console.log(error);
   }
 }
-
 // Event listener for search button//
 searchButton.addEventListener("click", async function () {
   if (cityname.value === "") {
     alert("Enter the city name, please");
-  }else {
+  } else {
     let fetchKey = `https://api.weatherapi.com/v1/forecast.json?q=${cityname.value}&days=5&key=df7058e6881d4a1ca13155224242707`;
     let weatherData = await fetchApi(fetchKey);
     console.log(weatherData);
@@ -82,7 +81,7 @@ function displayData(data) {
 
 // Function to save data to localStorage
 async function saveToLocalstorage(url) {
-  try{
+  try {
     let storedData = JSON.parse(localStorage.getItem("weather")) || [];
     let fetchData = await fetch(url);
     let newData = await fetchData.json();
@@ -92,29 +91,29 @@ async function saveToLocalstorage(url) {
       localStorage.setItem("weather", JSON.stringify(storedData));
     }
   }
-    catch{
-      console.error("error")
-    }  
+  catch {
+    console.error("error")
+  }
 }
 
 // Function to display data in dropdown
 async function displaydataofdropdown() {
   try {
     let cities = JSON.parse(localStorage.getItem("weather")) || [];
-  dropdown.innerHTML = "";
+    dropdown.innerHTML = "";
 
-  if (cities.length === 0) {
-    let defaultMessage = document.createElement("option");
-    defaultMessage.textContent = "Not available";
-    dropdown.appendChild(defaultMessage);
-  } else {
-    cities.forEach((city) => {
-      let option = document.createElement("option");
-      option.value = city.location.name;
-      option.textContent = city.location.name;
-      dropdown.appendChild(option);
-    });
-  }
+    if (cities.length === 0) {
+      let defaultMessage = document.createElement("option");
+      defaultMessage.textContent = "Not available";
+      dropdown.appendChild(defaultMessage);
+    } else {
+      cities.forEach((city) => {
+        let option = document.createElement("option");
+        option.value = city.location.name;
+        option.textContent = city.location.name;
+        dropdown.appendChild(option);
+      });
+    }
   }
   catch {
     console.error("error")
@@ -122,16 +121,16 @@ async function displaydataofdropdown() {
 }
 
 dropdown.addEventListener("change", async function (e) {
- try{
-  let selectedCity = e.target.value;
-  if (selectedCity) {
-    let particularseclectedcity = await fetch(`https://api.weatherapi.com/v1/forecast.json?q=${selectedCity}&days=5&key=df7058e6881d4a1ca13155224242707`)
-    let weatherdataofselectedcity = await particularseclectedcity.json()
-    displayData(weatherdataofselectedcity)
+  try {
+    let selectedCity = e.target.value;
+    if (selectedCity) {
+      let particularseclectedcity = await fetch(`https://api.weatherapi.com/v1/forecast.json?q=${selectedCity}&days=5&key=df7058e6881d4a1ca13155224242707`)
+      let weatherdataofselectedcity = await particularseclectedcity.json()
+      displayData(weatherdataofselectedcity)
+    }
   }
- }
- catch{
-  console.error("error")
- }
+  catch {
+    console.error("error")
+  }
 });
 
