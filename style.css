@@ -27,10 +27,10 @@ body {
     }
     #city-input{
         width: 500px;
-        margin-left: 1rem;
+        margin-right: 10rem;
     }
     #city-input > input{
-        width: 150px;
+        width: 100px;
     }
     #city-input label {
         display: none;
