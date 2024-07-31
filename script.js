@@ -18,7 +18,7 @@ async function fetchApi(url) {
   }
 }
 
-// Event listener for search button
+// Event listener for search button//
 searchButton.addEventListener("click", async function () {
   if (cityname.value === "") {
     alert("Enter the city name, please");
