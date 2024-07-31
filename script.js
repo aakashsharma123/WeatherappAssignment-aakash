@@ -43,7 +43,7 @@ getUserLocation.addEventListener("click", function () {
     (error) => {
       console.log(error);
     }
-  );
+  )
 });
 
 // Function to display data
