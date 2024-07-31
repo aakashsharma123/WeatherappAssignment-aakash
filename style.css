@@ -1,72 +1,129 @@
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
 body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+
+  
+
 }
 
 #container {
-    width: 95%;
-    height: 95%;
-    margin: 0 auto;
+border: 1px solid white;
+  width: 95%;
+  min-height: 100vh;
+  margin: 1rem auto;
 }
 
 #first-child-container {
-    width: 80%;
-    height: 30%;
+  width: 80%;
+  /* height: 30%; */
 }
 
-#forcast-container {
-    width: 30%;
-    height: auto;
+#forcastcontainer {
+  width: 100%;
+  /* height: auto; */
+  margin: 1rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
-    body {
-      font-size: 14px; /* Reduce font size for better readability */
-    }
-    #city-input{
-        width: 500px;
-        margin-right: 10rem;
-    }
-    #city-input > input{
-        width: 100px;
-    }
-    #city-input label {
-        display: none;
-      }
-  
-    #container {
-        margin-left: 5rem;
-        transform: scale(1);
-      width: 500px; /* Adjust width for better spacing */
-      padding: 10px; /* Add padding for better spacing */
-    }
-  
-    #first-child-container {
-      width: 100%; /* Make elements full width */
-      height: auto; /* Adjust height dynamically */
-    }
-    #forcast-container{
-        width: 50%; /* Make elements full width */
-        height: 30%;
-        display: flex;
-        flex-wrap:inherit;
-        flex-direction: column;
+.text-5xl{
+font-size: 1.5rem;
+}
+.text-2xl{
+font-size: 1.2rem;
+}
+#forcast-child-container-1,#forcast-child-container-2,#forcast-child-container-3,#forcast-child-container-4,#forcast-child-container-5{
+margin: 1rem;
 
-    }
-  
-    .text-5xl {
-      font-size: 1.2rem; /* Reduce font size for smaller screen */
-    }
-  
-    .text-2xl {
-      font-size: 0.9rem; /* Reduce font size for smaller screen */
-    }
-  
-    img {
-      width: 40px; /* Reduce image size */
-    }
-  
+padding: 0.8rem 0.4rem;
+}
+@media only screen and (min-device-width: 320px) and (max-width: 1005px)  {
+  body {
+    font-size: 14px; /* Reduce font size for better readability */
   }
-  
+  #city-input{
+      /* width: 500px; */
+      /* margin-right: 10rem; */
+      width: 100%;
+      /* background-color: green; */
+      /* font-size: 1rem; */
+      overflow: hidden;
+  }
+  #city-input > input{
+      /* width: 50%; */
+  }
+  #city-input label {
+      display: none;
+    }
+    #search-button{
+      font-size: 0.8rem;
+    }
+    #userlocation{
+      font-size: 0.5rem;
+    }
+    .text-3xl{
+      font-size: 1rem;
+    }
+
+  #container {
+      /* margin: 1rem auto; */
+      transform: scale(1);
+      /* min-height: 100vh; */
+    width:90%; 
+    padding: 10px;
+  }
+
+  #first-child-container {
+    max-width: 100%;
+    /* background-color: yellow; */
+    /* height: auto; Adjust height dynamically */
+  }
+  #forcastcontainer{
+   margin: 0.3rem auto;
+   max-width: 88%;
+   flex-wrap: wrap;
+   /* background-color: red; */
+
+
+  }
+  #forcast-child-container-1,#forcast-child-container-2,#forcast-child-container-3,#forcast-child-container-4,#forcast-child-container-5{
+    margin: 1rem;
+    /* background-color: green; */
+    width: 80%;
+    padding: 0.8rem 0.4rem;
+    overflow: hidden;
+  }
+
+  .text-5xl {
+    font-size: 1em; /* Reduce font size for smaller screen */
+  }
+
+  .text-2xl {
+    font-size: 0.8rem; /* Reduce font size for smaller screen */
+  }
+
+  img {
+    /* width: 40px; Reduce image size */
+  }
+
+}
+
+@media (max-width:569px) {
+  #city-input>input{
+      width: 70%;
+      padding: 0.1rem;
+  }
+  #search-button{
+    font-size: 0.5rem;
+    padding: 0.3rem;
+  }
+  #userlocation{
+    font-size: 0.5rem;
+    padding: 0.2rem;
+  }
+
+}
