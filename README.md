@@ -30,7 +30,7 @@ Link of the github
 PLease find the github link here->https://github.com/aakashsharma123/WeatherappAssignment-aakash
 
 Link of my hosted Weather App
-https://66a9f45c8ec79c890490fa19--weathernuts.netlify.app/
+https://weathernuts.netlify.app/
 
 Author
 Gudimanchi Aakash sharma
