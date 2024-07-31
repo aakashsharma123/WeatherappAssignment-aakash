@@ -12,6 +12,7 @@ async function fetchApi(url) {
     let data = await response.json();
     await saveToLocalstorage(url);
     return data;
+
   } catch (error) {
     console.log(error);
   }
@@ -21,7 +22,7 @@ async function fetchApi(url) {
 searchButton.addEventListener("click", async function () {
   if (cityname.value === "") {
     alert("Enter the city name, please");
-  } else {
+  }else {
     let fetchKey = `https://api.weatherapi.com/v1/forecast.json?q=${cityname.value}&days=5&key=df7058e6881d4a1ca13155224242707`;
     let weatherData = await fetchApi(fetchKey);
     console.log(weatherData);
@@ -31,11 +32,12 @@ searchButton.addEventListener("click", async function () {
 
 // Event listener for user location button
 getUserLocation.addEventListener("click", function () {
+  //getcurrentpostion will take two callback function in which one will be called if succes if its not succes its throws the error
   navigator.geolocation.getCurrentPosition(
     async (success) => {
       let fetchKey = `https://api.weatherapi.com/v1/forecast.json?q=${success.coords.latitude},${success.coords.longitude}&days=5&key=df7058e6881d4a1ca13155224242707`;
       let weatherData = await fetchApi(fetchKey);
-      console.log(weatherData);
+      // console.log(weatherData); 
       displayData(weatherData);
     },
     (error) => {
@@ -80,20 +82,25 @@ function displayData(data) {
 
 // Function to save data to localStorage
 async function saveToLocalstorage(url) {
-  let storedData = JSON.parse(localStorage.getItem("weather")) || [];
-  let fetchData = await fetch(url);
-  let newData = await fetchData.json();
-  let cityExists = storedData.some((item) => item.location.name === newData.location.name);
-
-  if (!cityExists) {
-    storedData.push(newData);
-    localStorage.setItem("weather", JSON.stringify(storedData));
+  try{
+    let storedData = JSON.parse(localStorage.getItem("weather")) || [];
+    let fetchData = await fetch(url);
+    let newData = await fetchData.json();
+    let cityExists = storedData.some((item) => item.location.name === newData.location.name);
+    if (!cityExists) {
+      storedData.push(newData);
+      localStorage.setItem("weather", JSON.stringify(storedData));
+    }
   }
+    catch{
+      console.error("error")
+    }  
 }
 
 // Function to display data in dropdown
 async function displaydataofdropdown() {
-  let cities = JSON.parse(localStorage.getItem("weather")) || [];
+  try {
+    let cities = JSON.parse(localStorage.getItem("weather")) || [];
   dropdown.innerHTML = "";
 
   if (cities.length === 0) {
@@ -108,13 +115,23 @@ async function displaydataofdropdown() {
       dropdown.appendChild(option);
     });
   }
+  }
+  catch {
+    console.error("error")
+  }
 }
+
 dropdown.addEventListener("change", async function (e) {
+ try{
   let selectedCity = e.target.value;
   if (selectedCity) {
     let particularseclectedcity = await fetch(`https://api.weatherapi.com/v1/forecast.json?q=${selectedCity}&days=5&key=df7058e6881d4a1ca13155224242707`)
     let weatherdataofselectedcity = await particularseclectedcity.json()
     displayData(weatherdataofselectedcity)
   }
+ }
+ catch{
+  console.error("error")
+ }
 });
 
