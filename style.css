@@ -1,11 +1,14 @@
 body {
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 #container {
     width: 95%;
     height: 95%;
+    margin: 0 auto;
 }
 
 #first-child-container {
@@ -18,56 +21,53 @@ body {
     height: auto;
 }
 
-@media only screen and (min-width: 376px) and (max-width: 768px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
     body {
-        padding: 10px;
+      font-size: 14px; /* Reduce font size for better readability */
     }
-
-    header h1 {
-        font-size: 2.5rem;
-        /* Adjusted font size for iPad Mini */
+    #city-input{
+        width: 500px;
+        margin-left: 1rem;
     }
-
-    .flex {
-        flex-direction: column;
-        /* Stack items vertically */
+    #city-input > input{
+        width: 150px;
     }
-
-    #first-child-container,
-    #forcast-container {
-        margin-bottom: 15px;
-        padding: 10px;
-        /* Add padding for better spacing */
+    #city-input label {
+        display: none;
+      }
+  
+    #container {
+        margin-left: 5rem;
+        transform: scale(1);
+      width: 500px; /* Adjust width for better spacing */
+      padding: 10px; /* Add padding for better spacing */
+    }
+  
+    #first-child-container {
+      width: 100%; /* Make elements full width */
+      height: auto; /* Adjust height dynamically */
     }
     #forcast-container{
-        margin-top: auto;
-    }
-    
+        width: 50%; /* Make elements full width */
+        height: 30%;
+        display: flex;
+        flex-wrap:inherit;
+        flex-direction: column;
 
+    }
+  
     .text-5xl {
-        font-size: 1.75rem;
-        /* Adjust font size for larger screens */
+      font-size: 1.2rem; /* Reduce font size for smaller screen */
     }
-
+  
     .text-2xl {
-        font-size: 1.125rem;
-        /* Adjust font size for larger screens */
+      font-size: 0.9rem; /* Reduce font size for smaller screen */
     }
-
+  
     img {
-        width: 60px;
-        /* Larger image size for iPad Mini */
+      width: 40px; /* Reduce image size */
     }
-
-    .border-8 {
-        border-width: 4px;
-        /* Slightly thicker borders */
-    }
-
-    .mt-10 {
-        margin-top: 1.5rem;
-        /* Adjust margin-top */
-    }
-}
-
-
+  
+    /* Additional adjustments based on your design */
+  }
+  

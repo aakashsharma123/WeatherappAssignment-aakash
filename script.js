@@ -47,7 +47,7 @@ getUserLocation.addEventListener("click", function () {
 // Function to display data
 function displayData(data) {
   currentWeather.innerHTML = `
-    <div class="flex flex-col justify-around">
+    <div class="flex flex-col justify-around ">
       <p class="text-3xl"><span class="citynametex">${data.location.name}</span>: (${data.location.localtime})</p>
       <p class="text-2xl"><span>Temperature:</span> ${data.current.temp_c} °C</p>
       <p class="text-2xl"><span>Wind:</span> ${data.current.wind_kph} kph</p>
@@ -68,8 +68,8 @@ function displayData(data) {
         <div>
           <img src="${day.day.condition.icon}" width="50px" alt="">
         </div>
-        <p class="text-2xl"><span>Temperature:</span> ${day.day.maxtemp_f} °F</p>
-        <p class="text-2xl"><span>Wind:</span> ${day.day.maxwind_mph} mph</p>
+        <p class="text-2xl"><span>Temperature:</span> ${day.day.maxtemp_c} °C</p>
+        <p class="text-2xl"><span>Wind:</span> ${day.day.maxwind_kph} Kph</p>
         <p class="text-2xl"><span>Humidity:</span> ${day.day.avghumidity}%</p>
       </div>
     `;
